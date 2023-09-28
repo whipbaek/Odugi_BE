@@ -29,7 +29,6 @@ public class AuthController {
     private String userEmail;
     private MemberRegisterRequestDto userMemberRequestDto;
     private final FileUploadService fileUploadService;
-//    private final StateManagementService stateManagementService;
 
     @GetMapping("/test")
     public String test(){

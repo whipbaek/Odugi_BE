@@ -1,8 +1,5 @@
 package devcamp.ottogi.userservice.exception;
-
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.springframework.http.HttpStatus;
 
 @Getter
 public class ApiException extends RuntimeException {
@@ -12,5 +9,4 @@ public class ApiException extends RuntimeException {
         super(error.getMessage());
         this.error = error;
     }
-
 }
