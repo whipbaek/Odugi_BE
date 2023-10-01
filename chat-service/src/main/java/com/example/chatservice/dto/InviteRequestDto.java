@@ -1,4 +1,4 @@
-package com.example.chatservice.domain;
+package com.example.chatservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

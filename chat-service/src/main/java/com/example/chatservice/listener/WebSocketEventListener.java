@@ -17,7 +17,6 @@ import java.util.Locale;
 @RequiredArgsConstructor
 public class WebSocketEventListener {
 
-//    private final StateManagementService stateManagementService;
 
     @EventListener
     public void handleWebSocketConnectListener(SessionConnectedEvent event) {
@@ -26,7 +25,6 @@ public class WebSocketEventListener {
         String sessionId = headerAccessor.getSessionId();
 
         log.info("[CONNECTED] websocket session id : {}", sessionId);
-
     }
 
     @EventListener
@@ -36,10 +34,6 @@ public class WebSocketEventListener {
         String sessionId = headerAccessor.getSessionId();
 
         log.info("[DISCONNECTED] websocket session id : {}", sessionId);
-        System.out.println("");
-
-//        stateManagementService.sendChannelOutState("","",sessionId);
-
     }
 
 }

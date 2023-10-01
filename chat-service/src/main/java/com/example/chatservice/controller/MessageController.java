@@ -1,6 +1,9 @@
 package com.example.chatservice.controller;
 
-import com.example.chatservice.domain.*;
+import com.example.chatservice.dto.ChatEnterDto;
+import com.example.chatservice.dto.ChatViewDto;
+import com.example.chatservice.dto.InviteRequestDto;
+import com.example.chatservice.dto.MessageRequestDto;
 import com.example.chatservice.response.CommonResponse;
 import com.example.chatservice.service.ChatRedisService;
 import com.example.chatservice.service.ResponseService;
@@ -12,9 +15,6 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
-
-import static com.example.chatservice.domain.ChatType.*;
 import static com.example.chatservice.domain.TextMessages.*;
 
 @Slf4j
@@ -53,16 +53,6 @@ public class MessageController {
         simpMessageSendingOperations.convertAndSend("/topic/"
                 + messageRequestDto.getChannelId(), messageRequestDto);
     }
-
-//    @MessageMapping("/add_queue")
-//    public void message_queue(@Payload MessageRequestDto messageRequestDto) {
-//        // Client 에게 채팅을 수신 -> redis 에 데이터 저장
-//        messageRequestDto.setCreatedAt();
-//        chatRedisService.addChat(messageRequestDto);
-//
-//        simpMessageSendingOperations.convertAndSend("/queue/"
-//                + messageRequestDto.getChannelId(), messageRequestDto);
-//    }
 
     // 커뮤니티에 가입했을 때 발생되어야 할 메세지
     @PostMapping("/community_enter")

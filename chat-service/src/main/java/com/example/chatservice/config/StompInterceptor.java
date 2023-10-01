@@ -17,8 +17,6 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class StompInterceptor implements ChannelInterceptor {
 
-//    private final StateManagementService stateManagementService;
-
     @Override
     public Message<?> preSend(Message<?> message, MessageChannel channel) {
 

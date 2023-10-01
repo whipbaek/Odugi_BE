@@ -1,6 +1,5 @@
 package com.example.chatservice.config;
 
-import com.example.chatservice.domain.MessageSaveDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
 import org.springframework.context.annotation.Bean;

@@ -1,14 +1,15 @@
-package com.example.chatservice.domain;
+package com.example.chatservice.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
-@Builder
-@AllArgsConstructor
 @NoArgsConstructor
-public class ChatViewDto {
+@AllArgsConstructor
+public class StateRequestDto {
+
     private String channelId;
+    private String userId;
+    private String state;
 }

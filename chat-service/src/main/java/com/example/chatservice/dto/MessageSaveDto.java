@@ -1,5 +1,6 @@
-package com.example.chatservice.domain;
+package com.example.chatservice.dto;
 
+import com.example.chatservice.domain.ChatType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

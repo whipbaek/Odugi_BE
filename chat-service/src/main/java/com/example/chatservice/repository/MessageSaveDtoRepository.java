@@ -1,12 +1,7 @@
 package com.example.chatservice.repository;
 
-import com.example.chatservice.domain.MessageListSaveDto;
-import com.example.chatservice.domain.MessageSaveDto;
-import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
+import com.example.chatservice.dto.MessageListSaveDto;
 import org.springframework.data.repository.CrudRepository;
-
-import java.util.List;
-import java.util.Optional;
 
 
 /**

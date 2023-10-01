@@ -1,10 +1,12 @@
 package com.example.chatservice.service;
 
-import com.example.chatservice.domain.*;
+import com.example.chatservice.dto.ChatViewDto;
+import com.example.chatservice.dto.MessageListSaveDto;
+import com.example.chatservice.dto.MessageRequestDto;
+import com.example.chatservice.dto.MessageSaveDto;
 import com.example.chatservice.repository.MessageSaveDtoRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,8 +17,6 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Slf4j
 public class ChatRedisService {
-
-
 
     private final MessageSaveDtoRepository repository;
 
@@ -49,11 +49,5 @@ public class ChatRedisService {
         }
         return  chatMessages;
     }
-
-    public void quitChat(MessageSaveDto messageDto) {
-
-    }
-
-
 
 }
