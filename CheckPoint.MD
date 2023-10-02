@@ -16,7 +16,7 @@
 
 - [x] 일관된 Response 리팩토링 (success, error)
   - [x] Generic 학습 및 리팩토링
-  - [ ] lombok builder + generic 이슈 정리
+  - [ ] lombok builder + generic 이슈 정리 (https://akageun.github.io/2019/06/30/lombok-builder-generic.html)
 
 
 
