@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ResponseService {
-    public <T> CommonResponse<Object> getSuccessResponse(SuccessMessages msg, T data){
-        return CommonResponse.builder()
+    public <T> CommonResponse<T> getSuccessResponse(SuccessMessages msg, T data){
+        return CommonResponse.<T>builder()
                 .success(true)
                 .code(HttpStatus.OK.value())
                 .message(msg.getMessage())
