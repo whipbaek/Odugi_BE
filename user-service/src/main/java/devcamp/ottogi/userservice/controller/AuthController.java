@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import static devcamp.ottogi.userservice.domain.SuccessMessages.*;
 import static devcamp.ottogi.userservice.exception.ErrorCode.*;
+import static devcamp.ottogi.userservice.response.CommonResponse.successResponse;
 
 @RestController
 @RequestMapping("/user/auth")
@@ -25,7 +26,6 @@ import static devcamp.ottogi.userservice.exception.ErrorCode.*;
 public class AuthController {
     private final AuthService authService;
     private final EmailService emailService;
-    private final ResponseService responseService;
     private String userEmail;
     private MemberRegisterRequestDto userMemberRequestDto;
     private final FileUploadService fileUploadService;
@@ -50,8 +50,7 @@ public class AuthController {
         }
 
         emailService.sendSimpleMessage(memberRequestDto.getEmail());
-
-        return responseService.getSuccessResponse(SEND_EMAIL, null);
+        return successResponse(SEND_EMAIL, null);
     }
 
     @PostMapping("/register_simple")
@@ -67,7 +66,7 @@ public class AuthController {
         }
 
         authService.register(userMemberRequestDto);
-        return responseService.getSuccessResponse(SIGNUP_SUCCESS, null);
+        return successResponse(SIGNUP_SUCCESS, null);
     }
 
     @PostMapping("/email")
@@ -80,23 +79,23 @@ public class AuthController {
         }
 
         authService.register(userMemberRequestDto);
-        return responseService.getSuccessResponse(SIGNUP_SUCCESS, userEmail);
+        return successResponse(SIGNUP_SUCCESS, userEmail);
     }
 
     @PostMapping("/login")
     public CommonResponse<Object> login(@RequestBody MemberLoginRequestDto memberLoginDto) {
-        return responseService.getSuccessResponse(LOGIN_SUCCESS, authService.login(memberLoginDto));
+        return successResponse(LOGIN_SUCCESS, authService.login(memberLoginDto));
     }
 
 
     @PostMapping("/reissue") //재발급
     public CommonResponse<Object> reissue(@RequestBody TokenRequestDto tokenRequestDto) {
-        return responseService.getSuccessResponse(REISSUE_SUCCESS, authService.reissue(tokenRequestDto));
+        return successResponse(REISSUE_SUCCESS, authService.reissue(tokenRequestDto));
     }
 
     @PatchMapping("/modifyimage")
     public CommonResponse<Object> modifyProfileImage(HttpServletRequest request, @RequestPart MultipartFile file) throws Exception{
         Long userId = Long.parseLong(request.getHeader("id"));
-        return responseService.getSuccessResponse(FILE_UPLOAD_SUCCESS, fileUploadService.uploadFile(userId, file));
+        return successResponse(FILE_UPLOAD_SUCCESS, fileUploadService.uploadFile(userId, file));
     }
 }

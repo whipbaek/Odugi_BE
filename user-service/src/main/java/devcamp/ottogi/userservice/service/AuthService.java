@@ -37,7 +37,6 @@ public class AuthService {
     private final MemberRepository memberRepository;
     private final PasswordEncoder passwordEncoder;
     private final TokenProvider tokenProvider;
-//    private final StateManagementService stateManagementService;
     private final RedisTemplate<String, String> redisTemplate;
 
     @Transactional
