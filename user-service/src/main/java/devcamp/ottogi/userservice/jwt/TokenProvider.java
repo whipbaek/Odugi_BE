@@ -2,7 +2,7 @@ package devcamp.ottogi.userservice.jwt;
 
 
 import devcamp.ottogi.userservice.dto.TokenDto;
-import devcamp.ottogi.userservice.exception.ApiException;
+import devcamp.ottogi.userservice.response.ApiException;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
@@ -22,7 +22,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.stream.Collectors;
 
-import static devcamp.ottogi.userservice.exception.ErrorCode.*;
+import static devcamp.ottogi.userservice.response.ErrorCode.*;
 
 @Slf4j
 @Component

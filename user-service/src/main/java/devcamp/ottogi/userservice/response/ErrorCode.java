@@ -1,4 +1,4 @@
-package devcamp.ottogi.userservice.exception;
+package devcamp.ottogi.userservice.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,6 +1,5 @@
-package devcamp.ottogi.userservice.exception;
+package devcamp.ottogi.userservice.response;
 
-import devcamp.ottogi.userservice.response.CommonResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -14,6 +13,7 @@ public class ApiExceptionHandler {
         return ResponseEntity
                 .status(e.getError().getStatus())
                 .body(CommonResponse.<T>builder()
+                        .code(e.getError().getCode())
                         .success(false)
                         .message(e.getMessage())
                         .build());

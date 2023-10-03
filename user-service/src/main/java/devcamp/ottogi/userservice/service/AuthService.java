@@ -6,7 +6,7 @@ import devcamp.ottogi.userservice.dto.request.MemberRegisterRequestDto;
 import devcamp.ottogi.userservice.dto.request.TokenRequestDto;
 import devcamp.ottogi.userservice.dto.response.MemberResponseDto;
 import devcamp.ottogi.userservice.entity.Member;
-import devcamp.ottogi.userservice.exception.ApiException;
+import devcamp.ottogi.userservice.response.ApiException;
 import devcamp.ottogi.userservice.jwt.TokenProvider;
 import devcamp.ottogi.userservice.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +23,7 @@ import org.springframework.util.ObjectUtils;
 
 import java.util.concurrent.TimeUnit;
 
-import static devcamp.ottogi.userservice.exception.ErrorCode.*;
+import static devcamp.ottogi.userservice.response.ErrorCode.*;
 
 @Slf4j
 @Service

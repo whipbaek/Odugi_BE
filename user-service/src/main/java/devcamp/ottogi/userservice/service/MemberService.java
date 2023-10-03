@@ -1,11 +1,10 @@
 package devcamp.ottogi.userservice.service;
 
-import devcamp.ottogi.userservice.domain.FriendState;
 import devcamp.ottogi.userservice.dto.response.FriendResponseDto;
 import devcamp.ottogi.userservice.dto.response.MemberResponseDto;
 import devcamp.ottogi.userservice.entity.Friend;
 import devcamp.ottogi.userservice.entity.Member;
-import devcamp.ottogi.userservice.exception.ApiException;
+import devcamp.ottogi.userservice.response.ApiException;
 import devcamp.ottogi.userservice.repository.FriendRepository;
 import devcamp.ottogi.userservice.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static devcamp.ottogi.userservice.domain.FriendState.*;
-import static devcamp.ottogi.userservice.exception.ErrorCode.*;
+import static devcamp.ottogi.userservice.response.ErrorCode.*;
 
 @Service
 @Transactional(readOnly = false)

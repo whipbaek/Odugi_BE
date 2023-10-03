@@ -1,8 +1,7 @@
 package devcamp.ottogi.userservice.service;
 
 import devcamp.ottogi.userservice.entity.Member;
-import devcamp.ottogi.userservice.exception.ApiException;
-import devcamp.ottogi.userservice.exception.ErrorCode;
+import devcamp.ottogi.userservice.response.ApiException;
 import devcamp.ottogi.userservice.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Random;
 
-import static devcamp.ottogi.userservice.exception.ErrorCode.*;
+import static devcamp.ottogi.userservice.response.ErrorCode.*;
 
 @Service
 @RequiredArgsConstructor

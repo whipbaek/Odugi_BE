@@ -9,14 +9,14 @@ import org.springframework.http.HttpStatus;
 @Builder
 public class CommonResponse<T> {
     private Boolean success;
-    private int code;
+    private String code;
     private String message;
     private T data;
 
     public static <T> CommonResponse<T> successResponse(SuccessMessages msg, T data){
         return CommonResponse.<T>builder()
                 .success(true)
-                .code(HttpStatus.OK.value())
+                .code(Integer.toString(HttpStatus.OK.value()))
                 .message(msg.getMessage())
                 .data(data)
                 .build();

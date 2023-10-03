@@ -3,7 +3,7 @@ package devcamp.ottogi.userservice.controller;
 import devcamp.ottogi.userservice.dto.request.FriendRequestDto;
 import devcamp.ottogi.userservice.dto.request.MemberModifyRequestDto;
 import devcamp.ottogi.userservice.dto.response.MemberResponseDto;
-import devcamp.ottogi.userservice.exception.ApiException;
+import devcamp.ottogi.userservice.response.ApiException;
 import devcamp.ottogi.userservice.response.CommonResponse;
 import devcamp.ottogi.userservice.service.*;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 
 import static devcamp.ottogi.userservice.domain.SuccessMessages.*;
-import static devcamp.ottogi.userservice.exception.ErrorCode.*;
+import static devcamp.ottogi.userservice.response.ErrorCode.*;
 import static devcamp.ottogi.userservice.response.CommonResponse.successResponse;
 
 
